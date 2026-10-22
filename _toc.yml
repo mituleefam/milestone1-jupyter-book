@@ -1,0 +1,9 @@
+format: jb-book
+root: notebooks/01_intro
+chapters:
+  - file: notebooks/02_methodology
+  - file: notebooks/03_data_organization
+  - file: notebooks/04_crawling_results
+  - file: notebooks/05_performance
+  - file: notebooks/06_errors_limitations
+  - file: notebooks/07_conclusion
