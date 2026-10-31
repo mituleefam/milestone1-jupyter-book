@@ -10,7 +10,7 @@ short_title: "1. Giới thiệu"
 
 ## 1. Thành viên và phân công
 
-Nhóm gồm **5 thành viên**. Mỗi người chủ trì một mô-đun của pipeline chung, đồng thời **crawl khoảng arXiv ID được giao của riêng mình** bằng cùng một bộ code trên Google Colab.
+Nhóm gồm **5 thành viên**. Mỗi người chủ trì một mô-đun của pipeline chung. Khoảng arXiv ID được giao của cả 5 thành viên được **crawl lần lượt trong một lượt chạy** bằng cùng một bộ code trên Google Colab; dữ liệu của mỗi khoảng vẫn nằm trong một thư mục riêng.
 
 | STT | Họ và tên | MSSV | Vai trò | Mô-đun phụ trách |
 | :---: | :--- | :---: | :--- | :--- |

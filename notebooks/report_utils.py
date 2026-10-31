@@ -59,10 +59,20 @@ def group() -> pd.Series:
 
 
 def metric(name: str) -> float:
-    """Sum of a count metric of corpus_statistics.py over all members."""
+    """A metric of corpus_statistics.py for the whole group: the "group" block
+    (every member's papers read together), or the sum over the members for
+    an export made before that block existed (count metrics only)."""
     stats = load("statistics")
-    values = pd.to_numeric(stats.loc[stats["metric"] == name, "value"], errors="coerce")
+    rows = stats[stats["metric"] == name]
+    if (rows["member"] == "group").any():
+        rows = rows[rows["member"] == "group"]
+    values = pd.to_numeric(rows["value"], errors="coerce")
     return float(values.sum()) if values.notna().any() else float("nan")
+
+
+def one_machine() -> bool:
+    """True when the ranges were crawled one after the other on one runtime."""
+    return bool(meta().get("one_machine"))
 
 
 def mib(n) -> float:
